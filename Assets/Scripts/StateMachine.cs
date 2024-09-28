@@ -79,7 +79,12 @@ public class StateMachine
       }
    }
 
-   private Transition GetTransition()
+   public IState GetCurrentState()
+   {
+       return _currentState;
+   }
+
+    private Transition GetTransition()
    {
       foreach(var transition in _anyTransitions)
          if (transition.Condition())

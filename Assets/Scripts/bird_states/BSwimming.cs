@@ -23,12 +23,19 @@ public class BSwimming : IState
 
     public void Tick()
     {
-
+        if (Input.GetKey(KeyCode.W))
+        {
+            bR.rb.velocity = new Vector2(0, Mathf.Clamp(bR.rb.velocity.y + (Time.deltaTime * bR.water_deceleration * 2), -bR.max_vertical_velocity, bR.max_vertical_velocity));
+        }
+        bR.rb.velocity = new Vector2(0, Mathf.Clamp(bR.rb.velocity.y + (Time.deltaTime * bR.water_deceleration), -bR.max_vertical_velocity, bR.max_vertical_velocity));
     }
 
     public bool To_Flying()
     {
-        // TODO Implement to swimming logic
+        if (bR.transform.position.y > 0)
+        {
+            return true;
+        }
         return false;
     }
 }

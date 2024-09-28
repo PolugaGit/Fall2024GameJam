@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class FishReferences : MonoBehaviour
 {
-    public float vertical_velocity;
+    [HideInInspector] public Rigidbody2D rb;
+    [HideInInspector] public Transform transform;
+    public float vertical_acceleration;
+    public float max_vertical_velocity;
+    public float deceleration;
+    public float air_deceleration;
 
     // Start is called before the first frame update
     void Start()
     {
-        this.vertical_velocity = 10;
+        rb = GetComponent<Rigidbody2D>();
+        transform = GetComponent<Transform>();
+        this.vertical_acceleration = 20;
+        this.max_vertical_velocity = 7;
+        this.deceleration = 20;
+        this.air_deceleration = 10;
     }
 
     // Update is called once per frame
