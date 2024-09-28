@@ -54,7 +54,7 @@ public class BFlying : IState
                 bR.rb.velocity = new Vector2(0,0);
             }
         }
-        UnityEngine.Debug.Log(bR.rb.velocity);
+        //UnityEngine.Debug.Log(bR.rb.velocity);
     }
 
     public bool To_Swimming() {

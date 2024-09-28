@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class NoteObject : MonoBehaviour
 {
-    public KeyCode rhythmKey;
+    private KeyCode rhythmKey;
     public bool isClearable;
-    public string playerTag; // TODO: Replace with generic or make two classes inheriting from NoteObject or implement from playerside
-                                            // Probably best to refactor and implement from player side as Destroy(other.gameObject)
+    public string playerTag;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (playerTag.Equals("BirdPlayer"))
+        {
+            rhythmKey = KeyCode.D;
+        }
+        if (playerTag.Equals("FishPlayer"))
+        {
+            rhythmKey = KeyCode.RightArrow;
+        }
     }
 
     // Update is called once per frame
@@ -22,7 +28,7 @@ public class NoteObject : MonoBehaviour
         {
             if (isClearable)
             {
-                gameObject.SetActive(false); // TODO: Change to destroy
+                Destroy(gameObject);
             }
         }
     }
