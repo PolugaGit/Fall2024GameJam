@@ -22,7 +22,7 @@ public class NoteObject : MonoBehaviour
         {
             if (isClearable)
             {
-                gameObject.SetActive(false);
+                gameObject.SetActive(false); // TODO: Change to destroy
             }
         }
     }
