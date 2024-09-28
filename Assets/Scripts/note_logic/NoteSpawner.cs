@@ -58,10 +58,16 @@ public class NoteSpawner : MonoBehaviour
                     case "Top":
                         pitches.Add(NotePosition.Top);
                         break;
-                    case "BirdMid":
+                    case "BirdMidTop":
                         pitches.Add(NotePosition.BirdMid);
                         break;
-                    case "FishMid":
+                    case "BirdMidBottom":
+                        pitches.Add(NotePosition.BirdMid);
+                        break;
+                    case "FishMidTop":
+                        pitches.Add(NotePosition.FishMid);
+                        break;
+                    case "FishMidBottom":
                         pitches.Add(NotePosition.FishMid);
                         break;
                     case "Bottom":
@@ -78,8 +84,10 @@ public class NoteSpawner : MonoBehaviour
 enum NotePosition
 {
     Top,
-    BirdMid,
-    FishMid,
+    BirdMidTop,
+    BirdMidBottom,
+    FishMidTop,
+    FishMidBottom,
     Bottom,
     None
 }
