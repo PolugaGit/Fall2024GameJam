@@ -22,7 +22,7 @@ public class FSwimming : IState
 
     public void Tick()
     {
-
+        fR.vertical_velocity = 0;
     }
 
     public bool To_Flying() {

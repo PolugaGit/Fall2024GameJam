@@ -26,7 +26,7 @@ public class BSwimming : IState
 
     }
 
-    bool To_Flying()
+    public bool To_Flying()
     {
         // TODO Implement to swimming logic
         return false;

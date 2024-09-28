@@ -8,6 +8,7 @@ public class BirdBrain : MonoBehaviour
 {
     private BirdReferences bR;
     private StateMachine _stateMachine;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,11 +17,11 @@ public class BirdBrain : MonoBehaviour
 
         // STATES
         var Flying = new BFlying(bR);
-        //var Swimming = new BSwimming(bR);
+        var Swimming = new BSwimming(bR);
 
         // TRANSITIONS
-        // At(Flying, Swimming, () => Flying.To_Swimming());
-        // At(Swimming, Flying, () => Swimming.To_Flying());
+        At(Flying, Swimming, () => Flying.To_Swimming());
+        At(Swimming, Flying, () => Swimming.To_Flying());
 
         // START STATE
         _stateMachine.SetState(Flying);

@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class BirdReferences : MonoBehaviour
 {
+    private float vertical_velocity;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.vertical_velocity = 10;
     }
 
     // Update is called once per frame
