@@ -8,6 +8,7 @@ public class BirdBrain : MonoBehaviour
 {
     private BirdReferences bR;
     private StateMachine _stateMachine;
+    private float angle;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,8 @@ public class BirdBrain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        angle = bR.rb.velocity.y * (45 / bR.max_vertical_velocity);
+        bR.transform.eulerAngles = new Vector3(0,0,angle);
         _stateMachine.Tick();
     }
 }

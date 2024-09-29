@@ -7,6 +7,7 @@ public class FishBrain : MonoBehaviour
 {
     private FishReferences fR;
     private StateMachine _stateMachine;
+    private float angle;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,8 @@ public class FishBrain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        angle = fR.rb.velocity.y * (45 / fR.max_vertical_velocity);
+        fR.transform.eulerAngles = new Vector3(0, 0, angle);
         _stateMachine.Tick();
     }
 }
