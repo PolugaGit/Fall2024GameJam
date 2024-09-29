@@ -12,7 +12,7 @@ public class FSwimming : IState
 
     public void OnEnter()
     {
-
+      fR.ChangeAnimationState("F_Swimming");
     }
 
     public void OnExit()

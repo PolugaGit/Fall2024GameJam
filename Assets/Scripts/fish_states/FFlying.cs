@@ -6,14 +6,13 @@ public class FFlying : IState
 {
     private FishReferences fR;
 
-    public FFlying(FishReferences fishReferences)
-    {
+    public FFlying(FishReferences fishReferences) {
         this.fR = fishReferences;
     }
 
     public void OnEnter()
     {
-
+      fR.ChangeAnimationState("F_Flying");
     }
 
     public void OnExit()
