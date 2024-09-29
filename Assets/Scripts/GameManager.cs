@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
     public void NoteHit(string player)
     {
         Debug.Log("Hit!"); // REMOVE: When score text is implemented
+        player = player.Substring(0, 4);
         if (player.Equals("Bird"))
         {
             if (birdMultiplier < multiplierThresholds.Length + 1)
