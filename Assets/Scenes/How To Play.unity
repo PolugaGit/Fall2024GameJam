@@ -122,11 +122,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<< Updated upstream
---- !u!1 &986031684
-=======
 --- !u!1 &46245327
->>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,11 +130,6 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< Updated upstream
-  - component: {fileID: 986031687}
-  - component: {fileID: 986031686}
-  - component: {fileID: 986031685}
-=======
   - component: {fileID: 46245328}
   - component: {fileID: 46245330}
   - component: {fileID: 46245329}
@@ -1124,7 +1115,6 @@ GameObject:
   - component: {fileID: 713217689}
   - component: {fileID: 713217688}
   - component: {fileID: 713217687}
->>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1132,43 +1122,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< Updated upstream
---- !u!81 &986031685
-=======
 --- !u!81 &713217687
->>>>>>> Stashed changes
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
-  m_GameObject: {fileID: 986031684}
-  m_Enabled: 1
---- !u!20 &986031686
-=======
   m_GameObject: {fileID: 713217686}
   m_Enabled: 1
 --- !u!20 &713217688
->>>>>>> Stashed changes
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
-  m_GameObject: {fileID: 986031684}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.8207547, g: 0.8904612, b: 1, a: 0}
-=======
   m_GameObject: {fileID: 713217686}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.6698113, g: 0.798218, b: 1, a: 0}
->>>>>>> Stashed changes
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1209,21 +1181,13 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
-<<<<<<< Updated upstream
---- !u!4 &986031687
-=======
 --- !u!4 &713217689
->>>>>>> Stashed changes
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
-  m_GameObject: {fileID: 986031684}
-=======
   m_GameObject: {fileID: 713217686}
->>>>>>> Stashed changes
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
@@ -1232,8 +1196,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
-=======
 --- !u!1 &765408909
 GameObject:
   m_ObjectHideFlags: 0
@@ -2006,7 +1968,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c7ee350a5497c423baf45742a5d36424, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0a858de8faf7149f7ad314eb1ad5e42c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2026,7 +1988,7 @@ Transform:
   m_GameObject: {fileID: 1846252913}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.44, y: 1.83, z: 0}
+  m_LocalPosition: {x: -1.44, y: 1.48, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2166,14 +2128,10 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2143207430}
   m_CullTransparentMesh: 1
->>>>>>> Stashed changes
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-<<<<<<< Updated upstream
-  - {fileID: 986031687}
-=======
   - {fileID: 713217689}
   - {fileID: 413674482}
   - {fileID: 62666383}
@@ -2183,4 +2141,3 @@ SceneRoots:
   - {fileID: 765408911}
   - {fileID: 1846252915}
   - {fileID: 413014917}
->>>>>>> Stashed changes
