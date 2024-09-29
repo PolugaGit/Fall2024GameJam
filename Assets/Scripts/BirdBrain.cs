@@ -33,7 +33,7 @@ public class BirdBrain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UnityEngine.Debug.Log(bR.can_combo);
+        //UnityEngine.Debug.Log(bR.can_combo);
         _stateMachine.Tick();
     }
 }

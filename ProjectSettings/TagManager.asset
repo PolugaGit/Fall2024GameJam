@@ -6,6 +6,9 @@ TagManager:
   tags:
   - BirdPlayer
   - FishPlayer
+  - BirdNote
+  - FishNote
+  - Background
   layers:
   - Default
   - TransparentFX
