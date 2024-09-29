@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 191466916}
   m_Layer: 6
   m_Name: lowerLimit
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -325,7 +325,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 220373081}
   m_Layer: 5
   m_Name: sky
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -439,7 +439,7 @@ GameObject:
   - component: {fileID: 367946565}
   m_Layer: 0
   m_Name: Fish Note (1)
-  m_TagString: Untagged
+  m_TagString: FishNote
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -488,7 +488,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -506,8 +506,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e8bb026878958419b6d94bf72e0cb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isClearable: 0
-  playerTag: FishPlayer
   clearLine: -10
 --- !u!212 &367946567
 SpriteRenderer:
@@ -687,7 +685,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -840,7 +838,7 @@ GameObject:
   - component: {fileID: 646121248}
   m_Layer: 0
   m_Name: Bird Note
-  m_TagString: Untagged
+  m_TagString: BirdNote
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -889,7 +887,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -907,8 +905,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e8bb026878958419b6d94bf72e0cb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isClearable: 0
-  playerTag: BirdPlayer
   clearLine: -10
 --- !u!212 &646121250
 SpriteRenderer:
@@ -976,7 +972,7 @@ GameObject:
   - component: {fileID: 678215141}
   m_Layer: 0
   m_Name: Fish Note
-  m_TagString: Untagged
+  m_TagString: FishNote
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1025,7 +1021,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1043,8 +1039,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e8bb026878958419b6d94bf72e0cb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isClearable: 0
-  playerTag: FishPlayer
   clearLine: -10
 --- !u!212 &678215143
 SpriteRenderer:
@@ -1189,7 +1183,7 @@ GameObject:
   - component: {fileID: 1128278368}
   m_Layer: 0
   m_Name: Bird Note (1)
-  m_TagString: Untagged
+  m_TagString: BirdNote
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1238,7 +1232,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1256,8 +1250,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e8bb026878958419b6d94bf72e0cb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isClearable: 0
-  playerTag: BirdPlayer
   clearLine: -10
 --- !u!212 &1128278370
 SpriteRenderer:
@@ -1629,7 +1621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 042765de76100b64c9f6c9fde6b570e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tempo: 100
+  tempo: 120
   hasStarted: 0
   beatsPerSecond: 0
 --- !u!4 &1537732754
@@ -1663,7 +1655,7 @@ GameObject:
   - component: {fileID: 1605838801}
   m_Layer: 5
   m_Name: water
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1747,7 +1739,7 @@ GameObject:
   - component: {fileID: 1620767126}
   m_Layer: 6
   m_Name: upperLimit
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1860,7 +1852,7 @@ Transform:
   m_GameObject: {fileID: 1797605785}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.653017, y: -2.2472568, z: -0.01817865}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

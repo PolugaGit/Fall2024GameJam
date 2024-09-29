@@ -14,6 +14,11 @@ public class FishReferences : MonoBehaviour
     [HideInInspector] public string currentAnimation;
     public bool can_combo;
 
+    private KeyCode rhythmKey;
+    private string noteTag;
+    private bool touchingNote;
+    private GameObject note;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,12 +30,39 @@ public class FishReferences : MonoBehaviour
         this.deceleration = 20;
         this.air_deceleration = 10;
         this.can_combo = false;
+
+        rhythmKey = KeyCode.RightArrow;
+        noteTag = "FishNote";
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(rhythmKey))
+        {
+            if (touchingNote)
+            {
+                Destroy(note);
+                Debug.Log("Hit!");
+            }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag(noteTag)) // TODO: Implement tag & bool. Implement fish
+        {
+            touchingNote = true;
+            note = other.gameObject;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag(noteTag))
+        {
+            touchingNote = false;
+            note = null;
+        }
     }
 
     public void ChangeAnimationState(string newAnimation)
