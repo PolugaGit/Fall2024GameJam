@@ -1840,8 +1840,8 @@ MonoBehaviour:
   multiplierThresholds: 020000000400000008000000
   birdScore: 0
   fishScore: 0
-  birdMultiplier: 0
-  fishMultiplier: 0
+  birdMultiplier: 1
+  fishMultiplier: 1
   birdMultTracker: 0
   fishMultTracker: 0
   birdScoreText: {fileID: 296684680}
@@ -1896,7 +1896,7 @@ MonoBehaviour:
   hasStarted: 0
   birdNotePrefab: {fileID: 3881012152247914363, guid: 0eeebeae1d715884fa22c3da200c671d, type: 3}
   fishNotePrefab: {fileID: 1827115759568662616, guid: 5f71efdf9ac74ac4bac1e6b51d5d8163, type: 3}
-  obstaclePrefab: {fileID: 0}
+  obstaclePrefab: {fileID: 3448464845481646210, guid: fc28b1f14fbc348a69a2acb4023ddeea, type: 3}
   spawnDistance: 10
   skyTop: 4.5
   skyMid: 3
