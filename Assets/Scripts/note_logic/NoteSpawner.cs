@@ -59,7 +59,6 @@ public class NoteSpawner : MonoBehaviour
         beatTime = 1f / beatScroller.beatsPerSecond;
         if (hasStarted) { 
             time += Time.deltaTime;
-            //Debug.Log(beatTime);
             if (time >= beatTime && beat < totalBeats)
             {
                 spawnNote(beat);
@@ -119,21 +118,27 @@ public class NoteSpawner : MonoBehaviour
                 // Unsafe. Not checking for None + NotePosition so assume not an issue
                 switch (note)
                 {
+                    case "T":
                     case "Top":
                         pitches.Add(NotePosition.Top);
                         break;
+                    case "BMT":
                     case "BirdMidTop":
                         pitches.Add(NotePosition.BirdMidTop);
                         break;
+                    case "BMB":
                     case "BirdMidBottom":
                         pitches.Add(NotePosition.BirdMidBottom);
                         break;
+                    case "FMT":
                     case "FishMidTop":
                         pitches.Add(NotePosition.FishMidTop);
                         break;
+                    case "FMB":
                     case "FishMidBottom":
                         pitches.Add(NotePosition.FishMidBottom);
                         break;
+                    case "B":
                     case "Bottom":
                         pitches.Add(NotePosition.Bottom);
                         break;
