@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,10 +22,10 @@ public class GameManager : MonoBehaviour
     public int birdMultTracker;
     public int fishMultTracker;
 
-    public Text birdScoreText;
-    public Text fishScoreText;
-    public Text birdMultText;
-    public Text fishMultText;
+    public TextMeshProUGUI birdScoreText;
+    public TextMeshProUGUI fishScoreText;
+    public TextMeshProUGUI birdMultText;
+    public TextMeshProUGUI fishMultText;
 
     public static GameManager instance;
 
@@ -79,25 +79,27 @@ public class GameManager : MonoBehaviour
 
         if (player.Equals("Fish"))
         {
-            if (birdMultiplier < multiplierThresholds.Length + 1)
+            if (fishMultiplier < multiplierThresholds.Length + 1)
             {
-                birdMultTracker++;
+                fishMultTracker++;
 
-                if (birdMultTracker >= multiplierThresholds[birdMultiplier - 1])
+                if (fishMultTracker >= multiplierThresholds[fishMultiplier - 1])
                 {
-                    birdMultTracker = 0;
-                    birdMultiplier++;
+                    fishMultTracker = 0;
+                    fishMultiplier++;
                 }
             }
 
-            birdScore += scorePerNote * birdMultiplier;
-            birdScoreText.text = "Score: " + birdScore;
+            fishScore += scorePerNote * fishMultiplier;
+            fishScoreText.text = "Score: " + fishScore;
         }
     }
 
     public void NoteMiss(string player)
     {
-        Debug.Log("Miss");
+        //Debug.Log("Miss");
+        player = player.Substring(0, 4); // Determines if Bird or Fish
+
         if (player.Equals("Bird"))
         {
             birdMultiplier = 1; // May change to drop instead of 1x

@@ -43,7 +43,7 @@ public class BirdReferences : MonoBehaviour
             if (touchingNote)
             {
                 Destroy(note);
-                GameManager.instance.NoteHit();
+                GameManager.instance.NoteHit(this.gameObject.tag);
             }
         }
     }
