@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,7 +8,6 @@ public class GameManager : MonoBehaviour
 {
     public bool hasStarted;
 
-    public AudioSource music;
     public BeatScroller theBS;
     public NoteSpawner theNS;
 
@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI fishMultText;
 
     public static GameManager instance;
+    public static int[] persistenceScore;
 
     // Start is called before the first frame update
     void Start()
@@ -46,15 +47,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        // Remove to make autostart when button is pressed
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
             hasStarted = true;
             theBS.hasStarted = true;
             theNS.hasStarted = true;
-
-        //}
     }
 
     public void NoteHit(string player)
@@ -121,5 +116,25 @@ public class GameManager : MonoBehaviour
     private string getMultText(int multiplier)
     {
         return "Mult: " + multiplier + "x";
+    }
+
+    public void saveScore(string sceneName)
+    {
+        int level = Int32.Parse(sceneName.Substring(5, 1)); // Grabs level number
+        int index = level - 1;
+        createFirstArray(level);
+        persistenceScore[index * 2] = birdScore;
+        persistenceScore[index * 2 + 1] = fishScore;
+        Debug.Log("level " + level + "birdScore: " + birdScore);
+        Debug.Log("level " + level + "fishScore: " + fishScore);
+        Debug.Log(string.Join(", ", persistenceScore));
+    }
+
+    // Persistence array has to be made only once
+    private void createFirstArray(int level)
+    {
+        if (level == 1) {
+            persistenceScore = new int[6];
+        }
     }
 }
