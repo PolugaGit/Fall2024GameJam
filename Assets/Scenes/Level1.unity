@@ -728,9 +728,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44aa6d8c7fea68e4ab080bdcdf747bee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  music: {fileID: 0}
   hasStarted: 0
   theBS: {fileID: 1537732753}
   theNS: {fileID: 1825205054}
+  currentMultiplier: 0
+  multiplierTracker: 0
+  multiplierThresholds: 
+  currentScore: 0
+  scorePerNote: 100
+  scoreText: {fileID: 0}
 --- !u!4 &452999424
 Transform:
   m_ObjectHideFlags: 0
@@ -1840,7 +1847,7 @@ MonoBehaviour:
   midTopHeight: 2
   midBottomHeight: -2
   bottomHeight: -4
-  level: {fileID: 4900000, guid: 258ccebdd1a182749b14c9806b20b14c, type: 3}
+  level: {fileID: 4900000, guid: e9094503743d9ea44a85158cacdb51eb, type: 3}
 --- !u!4 &1825205055
 Transform:
   m_ObjectHideFlags: 0

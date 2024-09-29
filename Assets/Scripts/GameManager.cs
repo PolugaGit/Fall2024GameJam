@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class GameManager : MonoBehaviour
     public bool hasStarted;
     public BeatScroller theBS;
     public NoteSpawner theNS;
+
+    public int currentMultiplier;
+    public int multiplierTracker;
+    public int[] multiplierThresholds;
 
     public int currentScore;
     public int scorePerNote = 100;
