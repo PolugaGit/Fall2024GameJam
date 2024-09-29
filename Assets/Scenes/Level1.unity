@@ -257,6 +257,7 @@ MonoBehaviour:
   air_deceleration: 0
   currentAnimation: 
   can_combo: 0
+  is_damaged: 0
 --- !u!114 &215502574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -616,6 +617,7 @@ MonoBehaviour:
   deceleration: 0
   water_deceleration: 0
   can_combo: 0
+  is_damaged: 0
   currentAnimation: 
 --- !u!114 &415393292
 MonoBehaviour:
@@ -1624,6 +1626,7 @@ MonoBehaviour:
   tempo: 120
   hasStarted: 0
   beatsPerSecond: 0
+  noteSpeed: 1
 --- !u!4 &1537732754
 Transform:
   m_ObjectHideFlags: 0
@@ -1991,16 +1994,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44aa6d8c7fea68e4ab080bdcdf747bee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music: {fileID: 0}
   hasStarted: 0
+  music: {fileID: 0}
   theBS: {fileID: 1537732753}
   theNS: {fileID: 1825205054}
-  currentMultiplier: 0
-  multiplierTracker: 0
-  multiplierThresholds: 
-  currentScore: 0
   scorePerNote: 100
-  scoreText: {fileID: 0}
+  multiplierThresholds: 
+  birdScore: 0
+  fishScore: 0
+  birdMultiplier: 0
+  fishMultiplier: 0
+  birdMultTracker: 0
+  fishMultTracker: 0
+  birdScoreText: {fileID: 0}
+  fishScoreText: {fileID: 0}
+  birdMultText: {fileID: 0}
+  fishMultText: {fileID: 0}
 --- !u!4 &1797605787
 Transform:
   m_ObjectHideFlags: 0
@@ -2049,11 +2058,14 @@ MonoBehaviour:
   hasStarted: 0
   birdNotePrefab: {fileID: 646121246}
   fishNotePrefab: {fileID: 678215139}
+  obstaclePrefab: {fileID: 7373441654805969506, guid: 9cc1d9274b6a146e79f901b293d51447, type: 3}
   spawnDistance: 10
-  topHeight: 4
-  midTopHeight: 2
-  midBottomHeight: -2
-  bottomHeight: -4
+  skyTop: 4.5
+  skyMid: 3
+  skyBottom: 1.5
+  seaTop: -1.5
+  seaMid: -3
+  seaBottom: -4.5
   level: {fileID: 4900000, guid: e9094503743d9ea44a85158cacdb51eb, type: 3}
 --- !u!4 &1825205055
 Transform:
