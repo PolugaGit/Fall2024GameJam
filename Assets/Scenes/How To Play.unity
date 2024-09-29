@@ -925,7 +925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15db52c9d4d51254297309c763176843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelName: Level 1 Copy
+  LevelName: Level1
 --- !u!114 &690553154
 MonoBehaviour:
   m_ObjectHideFlags: 0

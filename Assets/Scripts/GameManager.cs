@@ -48,13 +48,13 @@ public class GameManager : MonoBehaviour
     {
 
         // Remove to make autostart when button is pressed
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
             hasStarted = true;
             theBS.hasStarted = true;
             theNS.hasStarted = true;
 
-        }
+        //}
     }
 
     public void NoteHit(string player)
