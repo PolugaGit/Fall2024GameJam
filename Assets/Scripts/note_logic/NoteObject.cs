@@ -21,7 +21,7 @@ public class NoteObject : MonoBehaviour
         if (transform.position.x < clearLine)
         {
             Destroy(gameObject);
-            Debug.Log("Miss!");
+            GameManager.instance.NoteMiss();
         }
 
     }

@@ -5,36 +5,111 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public AudioSource music;
-
     public bool hasStarted;
+
+    public AudioSource music;
     public BeatScroller theBS;
     public NoteSpawner theNS;
 
-    public int currentMultiplier;
-    public int multiplierTracker;
+    public int scorePerNote = 100;
     public int[] multiplierThresholds;
 
-    public int currentScore;
-    public int scorePerNote = 100;
+    public int birdScore;
+    public int fishScore;
+    public int birdMultiplier;
+    public int fishMultiplier;
 
-    public Text scoreText;
+    public int birdMultTracker;
+    public int fishMultTracker;
+
+    public Text birdScoreText;
+    public Text fishScoreText;
+    public Text birdMultText;
+    public Text fishMultText;
+
+    public static GameManager instance;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        instance = this;
+
+        birdMultiplier = 1;
+        fishMultiplier = 1;
+
+        birdScoreText.text = "Score: 0";
+        fishScoreText.text = "Score: 0";
+        birdMultText.text = "Mult: 1x";
+        fishMultText.text = "Mult: 1x";
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        // Remove to make autostart when button is pressed
         if (Input.GetKeyDown(KeyCode.Space))
         {
             hasStarted = true;
             theBS.hasStarted = true;
             theNS.hasStarted = true;
 
+        }
+    }
+
+    public void NoteHit(string player)
+    {
+        Debug.Log("Hit!"); // REMOVE: When score text is implemented
+        if (player.Equals("Bird"))
+        {
+            if (birdMultiplier < multiplierThresholds.Length + 1)
+            {
+                birdMultTracker++;
+
+                if (birdMultTracker >= multiplierThresholds[birdMultiplier - 1])
+                {
+                    birdMultTracker = 0;
+                    birdMultiplier++;
+                }
+            }
+
+            birdScore += scorePerNote * birdMultiplier;
+            birdScoreText.text = "Score: " + birdScore;
+        }
+
+        if (player.Equals("Fish"))
+        {
+            if (birdMultiplier < multiplierThresholds.Length + 1)
+            {
+                birdMultTracker++;
+
+                if (birdMultTracker >= multiplierThresholds[birdMultiplier - 1])
+                {
+                    birdMultTracker = 0;
+                    birdMultiplier++;
+                }
+            }
+
+            birdScore += scorePerNote * birdMultiplier;
+            birdScoreText.text = "Score: " + birdScore;
+        }
+    }
+
+    public void NoteMiss(string player)
+    {
+        Debug.Log("Miss");
+        if (player.Equals("Bird"))
+        {
+            birdMultiplier = 1; // May change to drop instead of 1x
+            fishMultTracker = 0;
+            birdMultText.text = "Mult: " + birdMultiplier + "x";
+        }
+
+        if (player.Equals("Fish"))
+        {
+            fishMultiplier = 1; // Ditto
+            fishMultTracker = 0;
+            fishMultText.text = "Mult: " + fishMultiplier + "x";
         }
     }
 }

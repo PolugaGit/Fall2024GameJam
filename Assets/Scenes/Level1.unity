@@ -1839,7 +1839,7 @@ MonoBehaviour:
   theNS: {fileID: 1825205054}
   currentMultiplier: 0
   multiplierTracker: 0
-  multiplierThresholds: 
+  multiplierThresholds: 020000000400000008000000
   currentScore: 0
   scorePerNote: 100
   scoreText: {fileID: 0}

@@ -43,13 +43,13 @@ public class FishReferences : MonoBehaviour
             if (touchingNote)
             {
                 Destroy(note);
-                Debug.Log("Hit!");
+                GameManager.instance.NoteHit();
             }
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag(noteTag)) // TODO: Implement tag & bool. Implement fish
+        if (other.CompareTag(noteTag))
         {
             touchingNote = true;
             note = other.gameObject;
