@@ -16,7 +16,7 @@ public class SceneChanger : MonoBehaviour
     IEnumerator ChangeSceneAfterDelay()
     {
         yield return new WaitForSeconds(delay);
-
+        GameManager.instance.saveScore(gameObject.scene.name);
         SceneManager.LoadScene(nextSceneName);
     }
 }

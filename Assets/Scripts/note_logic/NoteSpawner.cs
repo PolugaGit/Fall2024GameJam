@@ -73,7 +73,6 @@ public class NoteSpawner : MonoBehaviour
         }
     }
 
-    // Mark Bird or Fish
     private void spawnNote(int beat)
     {
         HashSet<NotePosition> notesToSpawn = (HashSet<NotePosition>) beatMap[beat];
