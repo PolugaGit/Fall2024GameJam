@@ -38,7 +38,7 @@ public class FFlying : IState
     }
 
     public bool To_Combo_Air() {
-        if (fR.can_combo == true && Input.GetKey(KeyCode.Return)) {
+        if (fR.can_combo == true && Input.GetKey(KeyCode.RightArrow)) {
             return true;
         }
         return false;

@@ -18,9 +18,12 @@ public class BirdBrain : MonoBehaviour
         // STATES
         var Flying = new BFlying(bR);
         var Swimming = new BSwimming(bR);
+        var WaterCombo = new BWaterCombo(bR);
 
         // TRANSITIONS
         At(Flying, Swimming, () => Flying.To_Swimming());
+        At(Swimming, WaterCombo, () => Swimming.To_Combo_Water());
+        At(WaterCombo, Swimming, () => WaterCombo.To_Flying());
         At(Swimming, Flying, () => Swimming.To_Flying());
 
         // START STATE
@@ -33,7 +36,6 @@ public class BirdBrain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UnityEngine.Debug.Log(bR.can_combo);
         _stateMachine.Tick();
     }
 }

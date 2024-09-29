@@ -22,7 +22,6 @@ public class comboHitbox : MonoBehaviour
         if (other.name == "fish") {
             FishReferences R = other.GetComponent<FishReferences>();
             R.can_combo = true;
-            UnityEngine.Debug.Log("Fish can Combo");
         }
         else if (other.name == "bird") {
             BirdReferences R = other.GetComponent<BirdReferences>();

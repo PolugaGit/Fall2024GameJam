@@ -22,7 +22,7 @@ public class FishBrain : MonoBehaviour
         // TRANSITIONS
         At(Flying, Swimming, () => Flying.To_Swimming());
         At(Flying, AirCombo, () => Flying.To_Combo_Air());
-        At(AirCombo, Flying, () => AirCombo.To_Flying());
+        At(AirCombo, Swimming, () => AirCombo.To_Swimming());
         At(Swimming, Flying, () => Swimming.To_Flying());
 
         //START STATE

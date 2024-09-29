@@ -2,18 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BSwimming : IState
+public class BWaterCombo : IState
 {
     private BirdReferences bR;
 
-    public BSwimming(BirdReferences birdReferences)
+    public BWaterCombo(BirdReferences birdReferences)
     {
         this.bR = birdReferences;
     }
 
     public void OnEnter()
     {
-        bR.ChangeAnimationState("Swimming");
+        bR.rb.velocity = new Vector2(0, -6);
+        UnityEngine.Debug.Log("Entered Bird Combo");
     }
 
     public void OnExit()
@@ -23,9 +24,9 @@ public class BSwimming : IState
 
     public void Tick()
     {
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
-            bR.rb.velocity = new Vector2(0, Mathf.Clamp(bR.rb.velocity.y + (Time.deltaTime * bR.water_deceleration * 2), -bR.max_vertical_velocity, bR.max_vertical_velocity));
+            bR.rb.velocity = new Vector2(0, Mathf.Clamp(bR.rb.velocity.y + (Time.deltaTime * bR.water_deceleration * 3), -bR.max_vertical_velocity, bR.max_vertical_velocity));
         }
         bR.rb.velocity = new Vector2(0, Mathf.Clamp(bR.rb.velocity.y + (Time.deltaTime * bR.water_deceleration), -bR.max_vertical_velocity, bR.max_vertical_velocity));
     }
@@ -33,15 +34,6 @@ public class BSwimming : IState
     public bool To_Flying()
     {
         if (bR.transform.position.y > 0)
-        {
-            return true;
-        }
-        return false;
-    }
-
-    public bool To_Combo_Water()
-    {
-        if (bR.can_combo == true && Input.GetKey(KeyCode.D))
         {
             return true;
         }
