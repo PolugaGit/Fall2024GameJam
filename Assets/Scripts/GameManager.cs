@@ -71,6 +71,7 @@ public class GameManager : MonoBehaviour
                 {
                     birdMultTracker = 0;
                     birdMultiplier++;
+                    birdMultText.text = getMultText(birdMultiplier);
                 }
             }
 
@@ -88,6 +89,7 @@ public class GameManager : MonoBehaviour
                 {
                     fishMultTracker = 0;
                     fishMultiplier++;
+                    fishMultText.text = getMultText(fishMultiplier);
                 }
             }
 
@@ -105,14 +107,19 @@ public class GameManager : MonoBehaviour
         {
             birdMultiplier = 1; // May change to drop instead of 1x
             fishMultTracker = 0;
-            birdMultText.text = "Mult: " + birdMultiplier + "x";
+            birdMultText.text = getMultText(birdMultiplier);
         }
 
         if (player.Equals("Fish"))
         {
             fishMultiplier = 1; // Ditto
             fishMultTracker = 0;
-            fishMultText.text = "Mult: " + fishMultiplier + "x";
+            fishMultText.text = getMultText(fishMultiplier);
         }
+    }
+
+    private string getMultText(int multiplier)
+    {
+        return "Mult: " + multiplier + "x";
     }
 }
