@@ -10,17 +10,21 @@ public class BDamaged : IState
         this.bR = birdReferences;
     }
 
-    public void OnEnter() {
+    public void OnEnter()
+    {
         bR.rb.velocity = new Vector2(-8, 0);
-        if (bR.transform.position.y < 0) {
+        if (bR.transform.position.y < 0)
+        {
             bR.ChangeAnimationState("Damaged_Swimming");
-        } else {
+        }
+        else
+        {
             bR.ChangeAnimationState("Damaged_Flying");
         }
     }
 
     public void OnExit() {
-
+        bR.is_damaged = false;
     }
 
     public void Tick() {

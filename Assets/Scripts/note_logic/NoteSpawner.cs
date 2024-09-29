@@ -12,7 +12,8 @@ public class NoteSpawner : MonoBehaviour
 
     public GameObject birdNotePrefab;
     public GameObject fishNotePrefab;
-    public GameObject obstaclePrefab;
+    public GameObject waterObstaclePrefab;
+    public GameObject airObstaclePrefab;
     public float spawnDistance;
 
     public float skyTop;
@@ -72,7 +73,6 @@ public class NoteSpawner : MonoBehaviour
         }
     }
 
-    // Mark Bird or Fish
     private void spawnNote(int beat)
     {
         HashSet<NotePosition> notesToSpawn = (HashSet<NotePosition>) beatMap[beat];
@@ -120,22 +120,22 @@ public class NoteSpawner : MonoBehaviour
                     break;
 
                 case NotePosition.ObstacleSkyTop:
-                    Instantiate(obstaclePrefab, new Vector3(spawnDistance, skyTop, 0f), Quaternion.identity, noteHolder);
+                    Instantiate(airObstaclePrefab, new Vector3(spawnDistance, skyTop, 0f), Quaternion.identity, noteHolder);
                     break;
                 case NotePosition.ObstacleSkyMid:
-                    Instantiate(obstaclePrefab, new Vector3(spawnDistance, skyMid, 0f), Quaternion.identity, noteHolder);
+                    Instantiate(airObstaclePrefab, new Vector3(spawnDistance, skyMid, 0f), Quaternion.identity, noteHolder);
                     break;
                 case NotePosition.ObstacleSkyBottom:
-                    Instantiate(obstaclePrefab, new Vector3(spawnDistance, skyBottom, 0f), Quaternion.identity, noteHolder);
+                    Instantiate(airObstaclePrefab, new Vector3(spawnDistance, skyBottom, 0f), Quaternion.identity, noteHolder);
                     break;
                 case NotePosition.ObstacleSeaTop:
-                    Instantiate(obstaclePrefab, new Vector3(spawnDistance, seaTop, 0f), Quaternion.identity, noteHolder);
+                    Instantiate(waterObstaclePrefab, new Vector3(spawnDistance, seaTop, 0f), Quaternion.identity, noteHolder);
                     break;
                 case NotePosition.ObstacleSeaMid:
-                    Instantiate(obstaclePrefab, new Vector3(spawnDistance, seaMid, 0f), Quaternion.identity, noteHolder);
+                    Instantiate(waterObstaclePrefab, new Vector3(spawnDistance, seaMid, 0f), Quaternion.identity, noteHolder);
                     break;
                 case NotePosition.ObstacleSeaBottom:
-                    Instantiate(obstaclePrefab, new Vector3(spawnDistance, seaBottom, 0f), Quaternion.identity, noteHolder);
+                    Instantiate(waterObstaclePrefab, new Vector3(spawnDistance, seaBottom, 0f), Quaternion.identity, noteHolder);
                     break;
             }
         }
@@ -157,10 +157,10 @@ public class NoteSpawner : MonoBehaviour
                     pitches.Add(NotePosition.Rest);
                     break;
                 }
-                if (note.Contains("O"))
+                if (note.Contains("o"))
                 {
+                    Debug.Log("obstacle detect");
                     pitches.Add(ObstaclePosition(note));
-                    break;
                 }
                 // Unsafe. Not checking for None + NotePosition so assume not an issue
                 switch (note)

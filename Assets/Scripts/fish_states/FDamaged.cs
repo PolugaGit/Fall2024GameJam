@@ -26,7 +26,7 @@ public class FDamaged : IState
 
     public void OnExit()
     {
-
+        fR.is_damaged = false;
     }
 
     public void Tick()
