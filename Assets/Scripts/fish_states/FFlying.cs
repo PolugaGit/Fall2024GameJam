@@ -23,7 +23,6 @@ public class FFlying : IState
 
     public void Tick()
     {
-        UnityEngine.Debug.Log(fR.rb.velocity.y);
         if (Input.GetKey(KeyCode.DownArrow)) {
             fR.rb.velocity = new Vector2(0, Mathf.Clamp(fR.rb.velocity.y - (Time.deltaTime * fR.air_deceleration * 3), -fR.max_vertical_velocity, fR.max_vertical_velocity));
         }
@@ -34,6 +33,13 @@ public class FFlying : IState
     {
         if (fR.transform.position.y < 0)
         {
+            return true;
+        }
+        return false;
+    }
+
+    public bool To_Combo_Air() {
+        if (fR.can_combo == true && Input.GetKey(KeyCode.Return)) {
             return true;
         }
         return false;

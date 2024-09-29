@@ -254,6 +254,7 @@ MonoBehaviour:
   max_vertical_velocity: 0
   deceleration: 0
   air_deceleration: 0
+  can_combo: 0
 --- !u!114 &215502574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,6 +479,7 @@ MonoBehaviour:
   max_vertical_velocity: 0
   deceleration: 0
   water_deceleration: 0
+  can_combo: 0
   currentAnimation: 
 --- !u!114 &415393292
 MonoBehaviour:
@@ -665,6 +667,7 @@ GameObject:
   m_Component:
   - component: {fileID: 707556217}
   - component: {fileID: 707556218}
+  - component: {fileID: 707556219}
   m_Layer: 7
   m_Name: comboHitBox
   m_TagString: Untagged
@@ -732,6 +735,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &707556219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707556216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 891d84ab3e3e846858448a1c7317a50e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1481661294
 GameObject:
   m_ObjectHideFlags: 0
@@ -932,6 +947,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1510004620}
   - component: {fileID: 1510004621}
+  - component: {fileID: 1510004622}
   m_Layer: 7
   m_Name: comboHitBox
   m_TagString: Untagged
@@ -999,6 +1015,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1510004622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510004619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 891d84ab3e3e846858448a1c7317a50e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1605838800
 GameObject:
   m_ObjectHideFlags: 0

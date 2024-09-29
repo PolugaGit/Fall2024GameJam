@@ -17,9 +17,12 @@ public class FishBrain : MonoBehaviour
         // STATES
         var Swimming = new FSwimming(fR);
         var Flying = new FFlying(fR);
+        var AirCombo = new FAirCombo(fR);
 
         // TRANSITIONS
         At(Flying, Swimming, () => Flying.To_Swimming());
+        At(Flying, AirCombo, () => Flying.To_Combo_Air());
+        At(AirCombo, Flying, () => AirCombo.To_Flying());
         At(Swimming, Flying, () => Swimming.To_Flying());
 
         //START STATE
