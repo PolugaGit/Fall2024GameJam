@@ -12,6 +12,7 @@ public class FishReferences : MonoBehaviour
     public float deceleration;
     public float air_deceleration;
     [HideInInspector] public string currentAnimation;
+    public bool can_combo;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class FishReferences : MonoBehaviour
         this.max_vertical_velocity = 7;
         this.deceleration = 20;
         this.air_deceleration = 10;
+        this.can_combo = false;
     }
 
     // Update is called once per frame
