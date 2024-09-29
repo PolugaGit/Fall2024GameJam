@@ -13,7 +13,7 @@ public class Obstacle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position -= new Vector3(10 * Time.deltaTime, 0f, 0f);
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -1896,6 +1896,7 @@ MonoBehaviour:
   hasStarted: 0
   birdNotePrefab: {fileID: 3881012152247914363, guid: 0eeebeae1d715884fa22c3da200c671d, type: 3}
   fishNotePrefab: {fileID: 1827115759568662616, guid: 5f71efdf9ac74ac4bac1e6b51d5d8163, type: 3}
+  obstaclePrefab: {fileID: 0}
   spawnDistance: 10
   skyTop: 4.5
   skyMid: 3
