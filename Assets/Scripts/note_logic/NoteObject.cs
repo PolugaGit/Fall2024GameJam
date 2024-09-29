@@ -29,6 +29,7 @@ public class NoteObject : MonoBehaviour
             if (isClearable)
             {
                 Destroy(gameObject);
+                Debug.Log("Hit!");
             }
         }
     }
@@ -37,11 +38,11 @@ public class NoteObject : MonoBehaviour
     {
         if (other.CompareTag(playerTag))
         {
-            Debug.Log("Note hittable");
             isClearable = true;
         }
     }
 
+    // TODO: Replace with a destroy method that counts a miss and destroys the note
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag(playerTag))

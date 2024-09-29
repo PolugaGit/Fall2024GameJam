@@ -301,6 +301,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63cacb366c81db0478d932ab9d356655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NoteHolderObject: {fileID: 1376615951}
+  hasStarted: 0
+  birdNotePrefab: {fileID: 2061828373}
+  fishNotePrefab: {fileID: 1820274191}
+  spawnDistance: 20
+  topHeight: 5
+  midTopHeight: 2.5
+  midBottomHeight: -2.5
+  bottomHeight: -5
   level: {fileID: 4900000, guid: e9094503743d9ea44a85158cacdb51eb, type: 3}
 --- !u!1 &215502570
 GameObject:
@@ -774,6 +783,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &832996752
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 832996753}
+  - component: {fileID: 832996754}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &832996753
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832996752}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.653017, y: -2.2472568, z: -0.01817865}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &832996754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832996752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44aa6d8c7fea68e4ab080bdcdf747bee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasStarted: 0
+  theBS: {fileID: 1376615953}
+  theNS: {fileID: 203721370}
 --- !u!1 &1376615951
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,7 +880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tempo: 120
   hasStarted: 0
-  beatsPerFrame: 0
+  beatsPerSecond: 0
 --- !u!1 &1820274191
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,7 +894,7 @@ GameObject:
   - component: {fileID: 1820274193}
   - component: {fileID: 1820274195}
   m_Layer: 0
-  m_Name: Note_2
+  m_Name: Fish Note
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1108,7 +1164,7 @@ GameObject:
   - component: {fileID: 2061828375}
   - component: {fileID: 2061828377}
   m_Layer: 0
-  m_Name: Note_1
+  m_Name: Bird Note
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1239,3 +1295,4 @@ SceneRoots:
   - {fileID: 415393290}
   - {fileID: 1376615952}
   - {fileID: 203721369}
+  - {fileID: 832996753}
