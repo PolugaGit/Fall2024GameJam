@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 215502575}
   m_Layer: 3
   m_Name: fish
-  m_TagString: Untagged
+  m_TagString: FishPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -322,7 +322,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 415393293}
   m_Layer: 3
   m_Name: bird
-  m_TagString: Untagged
+  m_TagString: BirdPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -547,7 +547,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -593,8 +593,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasStarted: 0
-  theBS: {fileID: 0}
-  theNS: {fileID: 0}
+  theBS: {fileID: 1537732753}
+  theNS: {fileID: 1825205054}
 --- !u!4 &452999424
 Transform:
   m_ObjectHideFlags: 0
@@ -785,7 +785,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isClearable: 0
   playerTag: BirdPlayer
-  clearLine: -2
+  clearLine: -5
 --- !u!212 &646121250
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -921,7 +921,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isClearable: 0
   playerTag: FishPlayer
-  clearLine: -2
+  clearLine: -5
 --- !u!212 &678215143
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1528,6 +1528,60 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1825205053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1825205055}
+  - component: {fileID: 1825205054}
+  m_Layer: 0
+  m_Name: NoteSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1825205054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825205053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63cacb366c81db0478d932ab9d356655, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NoteHolderObject: {fileID: 1537732752}
+  hasStarted: 0
+  birdNotePrefab: {fileID: 646121246}
+  fishNotePrefab: {fileID: 678215139}
+  spawnDistance: 20
+  topHeight: 5
+  midTopHeight: 2.5
+  midBottomHeight: -2.5
+  bottomHeight: -5
+  level: {fileID: 4900000, guid: e9094503743d9ea44a85158cacdb51eb, type: 3}
+--- !u!4 &1825205055
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825205053}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 20, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1539,5 +1593,6 @@ SceneRoots:
   - {fileID: 220373082}
   - {fileID: 1620767127}
   - {fileID: 191466917}
-  - {fileID: 1537732754}
   - {fileID: 452999424}
+  - {fileID: 1825205055}
+  - {fileID: 1537732754}
