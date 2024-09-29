@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class NoteSpawner : MonoBehaviour
@@ -11,6 +12,7 @@ public class NoteSpawner : MonoBehaviour
 
     public GameObject birdNotePrefab;
     public GameObject fishNotePrefab;
+    public GameObject obstaclePrefab;
     public float spawnDistance;
 
     public float skyTop;
@@ -39,7 +41,7 @@ public class NoteSpawner : MonoBehaviour
         time = 0f;
         beat = 0;
         beatMap = new ArrayList();
-        parseMap(level.text);
+        ParseMap(level.text);
         totalBeats = beatMap.Count;
 
         //TEST: Checking parsing of level.txt file
@@ -116,11 +118,30 @@ public class NoteSpawner : MonoBehaviour
                 case NotePosition.FishSeaBottom:
                     Instantiate(fishNotePrefab, new Vector3(spawnDistance, seaBottom, 0f), Quaternion.identity, noteHolder);
                     break;
+
+                case NotePosition.ObstacleSkyTop:
+                    Instantiate(obstaclePrefab, new Vector3(spawnDistance, skyTop, 0f), Quaternion.identity, noteHolder);
+                    break;
+                case NotePosition.ObstacleSkyMid:
+                    Instantiate(obstaclePrefab, new Vector3(spawnDistance, skyMid, 0f), Quaternion.identity, noteHolder);
+                    break;
+                case NotePosition.ObstacleSkyBottom:
+                    Instantiate(obstaclePrefab, new Vector3(spawnDistance, skyBottom, 0f), Quaternion.identity, noteHolder);
+                    break;
+                case NotePosition.ObstacleSeaTop:
+                    Instantiate(obstaclePrefab, new Vector3(spawnDistance, seaTop, 0f), Quaternion.identity, noteHolder);
+                    break;
+                case NotePosition.ObstacleSeaMid:
+                    Instantiate(obstaclePrefab, new Vector3(spawnDistance, seaMid, 0f), Quaternion.identity, noteHolder);
+                    break;
+                case NotePosition.ObstacleSeaBottom:
+                    Instantiate(obstaclePrefab, new Vector3(spawnDistance, seaBottom, 0f), Quaternion.identity, noteHolder);
+                    break;
             }
         }
     }
 
-    private void parseMap(string level)
+    private void ParseMap(string level)
     {
         string[] beats = level.Split("\n"); // Splits by beat
 
@@ -134,6 +155,11 @@ public class NoteSpawner : MonoBehaviour
                 if (note.Equals("R"))
                 {
                     pitches.Add(NotePosition.Rest);
+                    break;
+                }
+                if (note.Contains("O"))
+                {
+                    pitches.Add(ObstaclePosition(note));
                     break;
                 }
                 // Unsafe. Not checking for None + NotePosition so assume not an issue
@@ -194,7 +220,32 @@ public class NoteSpawner : MonoBehaviour
             beatMap.Add(pitches);
         }
     }
+
+    private NotePosition ObstaclePosition(string obstacle)
+    {
+        string level = obstacle.Substring(1, 1);
+        switch (level)
+        {
+            case "1":
+                return NotePosition.ObstacleSkyTop;
+            case "2":
+                return NotePosition.ObstacleSkyMid;
+            case "3":
+                return NotePosition.ObstacleSkyBottom;
+            case "4":
+                return NotePosition.ObstacleSeaTop;
+            case "5":
+                return NotePosition.ObstacleSeaMid;
+            case "6":
+                return NotePosition.ObstacleSeaBottom;
+            default:
+                Debug.Log("Object Level not available");
+                return NotePosition.Rest; // Bandaid. Up to level designer to not violate cases
+        }
+
+    }
 }
+
 
 enum NotePosition
 {
@@ -210,5 +261,12 @@ enum NotePosition
     FishSeaTop,
     FishSeaMid,
     FishSeaBottom,
-    Rest
+    ObstacleSkyTop,
+    ObstacleSkyMid,
+    ObstacleSkyBottom,
+    ObstacleSeaTop,
+    ObstacleSeaMid,
+    ObstacleSeaBottom,
+    Rest,
+
 }
