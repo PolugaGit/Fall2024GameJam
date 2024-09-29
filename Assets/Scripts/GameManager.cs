@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public AudioSource music;
+
     public bool hasStarted;
     public BeatScroller theBS;
     public NoteSpawner theNS;
+
+    public int currentScore;
+    public int scorePerNote = 100;
+
+    public Text scoreText;
 
     // Start is called before the first frame update
     void Start()
