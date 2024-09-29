@@ -13,7 +13,7 @@ public class FAirCombo : IState
 
     public void OnEnter()
     {
-        fR.rb.velocity = new Vector2(0, 6);
+        fR.rb.velocity = new Vector2(0, 7);
     }
 
     public void OnExit()

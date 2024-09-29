@@ -13,7 +13,7 @@ public class BWaterCombo : IState
 
     public void OnEnter()
     {
-        bR.rb.velocity = new Vector2(0, -6);
+        bR.rb.velocity = new Vector2(0, -7);
         UnityEngine.Debug.Log("Entered Bird Combo");
     }
 
@@ -34,6 +34,13 @@ public class BWaterCombo : IState
     public bool To_Flying()
     {
         if (bR.transform.position.y > 0)
+        {
+            return true;
+        }
+        return false;
+    }
+    public bool To_Damaged() {
+        if (bR.is_damaged)
         {
             return true;
         }

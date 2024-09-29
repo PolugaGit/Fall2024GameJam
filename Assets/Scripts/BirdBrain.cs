@@ -20,12 +20,18 @@ public class BirdBrain : MonoBehaviour
         var Flying = new BFlying(bR);
         var Swimming = new BSwimming(bR);
         var WaterCombo = new BWaterCombo(bR);
+        var Damaged = new BDamaged(bR);
 
         // TRANSITIONS
         At(Flying, Swimming, () => Flying.To_Swimming());
         At(Swimming, WaterCombo, () => Swimming.To_Combo_Water());
         At(WaterCombo, Swimming, () => WaterCombo.To_Flying());
         At(Swimming, Flying, () => Swimming.To_Flying());
+        At(Swimming, Damaged, () => Swimming.To_Damaged());
+        At(Flying, Damaged, () => Flying.To_Damaged());
+        At(WaterCombo, Damaged, () => WaterCombo.To_Damaged());
+        At(Damaged, Swimming, () => Damaged.To_Swimming());
+        At(Damaged, Flying, () => Damaged.To_Flying());
 
         // START STATE
         _stateMachine.SetState(Flying);
@@ -39,6 +45,7 @@ public class BirdBrain : MonoBehaviour
     {
         angle = bR.rb.velocity.y * (45 / bR.max_vertical_velocity);
         bR.transform.eulerAngles = new Vector3(0,0,angle);
+
         _stateMachine.Tick();
     }
 }

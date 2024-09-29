@@ -12,6 +12,7 @@ public class BirdReferences : MonoBehaviour
     public float deceleration;
     public float water_deceleration;
     public bool can_combo;
+    public bool is_damaged;
     [HideInInspector] public string currentAnimation;
 
     // Start is called before the first frame update
@@ -25,6 +26,7 @@ public class BirdReferences : MonoBehaviour
         this.deceleration = 20;
         this.water_deceleration = 10;
         this.can_combo = false;
+        this.is_damaged = false;
     }
 
     // Update is called once per frame
