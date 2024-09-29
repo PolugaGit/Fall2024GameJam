@@ -1121,7 +1121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe0f433eb2804be1a126075c94e81e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 55
+  delay: 10
   nextSceneName: Level2
 --- !u!1 &1481661294
 GameObject:
@@ -1990,7 +1990,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasStarted: 0
-  music: {fileID: 0}
   theBS: {fileID: 1537732753}
   theNS: {fileID: 1825205054}
   scorePerNote: 100
