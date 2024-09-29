@@ -11,7 +11,7 @@ public class BFlying : IState
     }
 
     public void OnEnter() {
-
+        bR.ChangeAnimationState("Flying");
     }
 
     public void OnExit() {

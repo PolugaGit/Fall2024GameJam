@@ -13,7 +13,7 @@ public class BSwimming : IState
 
     public void OnEnter()
     {
-
+        bR.ChangeAnimationState("Swimming");
     }
 
     public void OnExit()
