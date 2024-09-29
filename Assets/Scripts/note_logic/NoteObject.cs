@@ -7,6 +7,7 @@ public class NoteObject : MonoBehaviour
     private KeyCode rhythmKey;
     public bool isClearable;
     public string playerTag;
+    public float clearLine = -2f;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,13 @@ public class NoteObject : MonoBehaviour
                 Debug.Log("Hit!");
             }
         }
+        
+        if (transform.position.x < clearLine)
+        {
+            Destroy(gameObject);
+            Debug.Log("Miss!");
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -47,7 +55,6 @@ public class NoteObject : MonoBehaviour
     {
         if (other.CompareTag(playerTag))
         {
-            Debug.Log("Note misssed");
             isClearable = false;
         }
     }
