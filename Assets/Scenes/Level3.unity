@@ -1896,8 +1896,8 @@ MonoBehaviour:
   hasStarted: 0
   birdNotePrefab: {fileID: 3881012152247914363, guid: 0eeebeae1d715884fa22c3da200c671d, type: 3}
   fishNotePrefab: {fileID: 1827115759568662616, guid: 5f71efdf9ac74ac4bac1e6b51d5d8163, type: 3}
-  waterObstaclePrefab: {fileID: 3448464845481646210, guid: fc28b1f14fbc348a69a2acb4023ddeea, type: 3}
-  airObstaclePrefab: {fileID: 7373441654805969506, guid: 9cc1d9274b6a146e79f901b293d51447, type: 3}
+  waterObstaclePrefab: {fileID: 1261749349817844535, guid: 2cd3f878f579d47ed98932f4871c3881, type: 3}
+  airObstaclePrefab: {fileID: 1534424908844118986, guid: e99c805620e0740dbab5548b9fcdcbf4, type: 3}
   spawnDistance: 10
   skyTop: 4.5
   skyMid: 3
@@ -1980,7 +1980,7 @@ SpriteRenderer:
   m_SortingLayerID: 353030579
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 92e57d56935bb464a89bc50e37bb21f3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 22c85428574b2484c92bca31c2a6f23d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1999,13 +1999,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1948564501}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.39569607, y: 0.39569607, z: 0.39569607}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1948564504
 Animator:
   serializedVersion: 5
@@ -2016,7 +2016,7 @@ Animator:
   m_GameObject: {fileID: 1948564501}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3df84d68d70164e58b8adcc7fde38645, type: 2}
+  m_Controller: {fileID: 9100000, guid: fc28be9ab1eb7451eb2760e49215c836, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

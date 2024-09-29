@@ -39,19 +39,4 @@ public class Obstacle : MonoBehaviour
         }
         Destroy(gameObject);
     }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        GameObject other = collision.gameObject;
-        if (other.name == "fish")
-        {
-            FishReferences R = other.GetComponent<FishReferences>();
-            R.is_damaged = false;
-        }
-        else if (other.name == "bird")
-        {
-            BirdReferences R = other.GetComponent<BirdReferences>();
-            R.is_damaged = false;
-        }
-    }
 }
