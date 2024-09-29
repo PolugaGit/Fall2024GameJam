@@ -13,10 +13,12 @@ public class NoteSpawner : MonoBehaviour
     public GameObject fishNotePrefab;
     public float spawnDistance;
 
-    public float topHeight;
-    public float midTopHeight;
-    public float midBottomHeight;
-    public float bottomHeight;
+    public float skyTop;
+    public float skyMid;
+    public float skyBottom;
+    public float seaTop;
+    public float seaMid;
+    public float seaBottom;
 
     private float time;
     private int beat; // Currently int, but implement sub quarter notes as TODO
@@ -77,23 +79,42 @@ public class NoteSpawner : MonoBehaviour
         {
             switch (notePosition)
             {
-                case NotePosition.Top:
-                    Instantiate(birdNotePrefab, new Vector3(spawnDistance, topHeight, 0f), Quaternion.identity, noteHolder);
+                case NotePosition.BirdSkyTop:
+                    Instantiate(birdNotePrefab, new Vector3(spawnDistance, skyTop, 0f), Quaternion.identity, noteHolder);
                     break;
-                case NotePosition.BirdMidTop:
-                    Instantiate(birdNotePrefab, new Vector3(spawnDistance, midTopHeight, 0f), Quaternion.identity, noteHolder);
+                case NotePosition.FishSkyTop:
+                    Instantiate(fishNotePrefab, new Vector3(spawnDistance, skyTop, 0f), Quaternion.identity, noteHolder); // New prefab? Special Note
                     break;
-                case NotePosition.BirdMidBottom:
-                    Instantiate(birdNotePrefab, new Vector3(spawnDistance, midBottomHeight, 0f), Quaternion.identity, noteHolder);
+                case NotePosition.BirdSkyMid:
+                    Instantiate(birdNotePrefab, new Vector3(spawnDistance, skyMid, 0f), Quaternion.identity, noteHolder);
                     break;
-                case NotePosition.FishMidTop:
-                    Instantiate(fishNotePrefab, new Vector3(spawnDistance, midTopHeight, 0f), Quaternion.identity, noteHolder);
+                case NotePosition.FishSkyMid:
+                    Instantiate(fishNotePrefab, new Vector3(spawnDistance, skyMid, 0f), Quaternion.identity, noteHolder);
                     break;
-                case NotePosition.FishMidBottom:
-                    Instantiate(fishNotePrefab, new Vector3(spawnDistance, midBottomHeight, 0f), Quaternion.identity, noteHolder);
+                case NotePosition.BirdSkyBottom:
+                    Instantiate(birdNotePrefab, new Vector3(spawnDistance, skyBottom, 0f), Quaternion.identity, noteHolder);
                     break;
-                case NotePosition.Bottom:
-                    Instantiate(fishNotePrefab, new Vector3(spawnDistance, bottomHeight, 0f), Quaternion.identity, noteHolder);
+                case NotePosition.FishSkyBottom:
+                    Instantiate(fishNotePrefab, new Vector3(spawnDistance, skyBottom, 0f), Quaternion.identity, noteHolder);
+                    break;
+
+                case NotePosition.BirdSeaTop:
+                    Instantiate(birdNotePrefab, new Vector3(spawnDistance, seaTop, 0f), Quaternion.identity, noteHolder);
+                    break;
+                case NotePosition.FishSeaTop:
+                    Instantiate(fishNotePrefab, new Vector3(spawnDistance, seaTop, 0f), Quaternion.identity, noteHolder);
+                    break;
+                case NotePosition.BirdSeaMid:
+                    Instantiate(birdNotePrefab, new Vector3(spawnDistance, seaMid, 0f), Quaternion.identity, noteHolder);
+                    break;
+                case NotePosition.FishSeaMid:
+                    Instantiate(fishNotePrefab, new Vector3(spawnDistance, seaMid, 0f), Quaternion.identity, noteHolder);
+                    break;
+                case NotePosition.BirdSeaBottom:
+                    Instantiate(birdNotePrefab, new Vector3(spawnDistance, seaBottom, 0f), Quaternion.identity, noteHolder); // New prefab? Special Note
+                    break;
+                case NotePosition.FishSeaBottom:
+                    Instantiate(fishNotePrefab, new Vector3(spawnDistance, seaBottom, 0f), Quaternion.identity, noteHolder);
                     break;
             }
         }
@@ -110,37 +131,62 @@ public class NoteSpawner : MonoBehaviour
 
             foreach (string note in notes)
             {
-                if (note.Equals("none"))
+                if (note.Equals("R"))
                 {
-                    pitches.Add(NotePosition.None);
+                    pitches.Add(NotePosition.Rest);
                     break;
                 }
                 // Unsafe. Not checking for None + NotePosition so assume not an issue
                 switch (note)
                 {
-                    case "T":
-                    case "Top":
-                        pitches.Add(NotePosition.Top);
+                    case "bst":
+                    case "BirdSkyTop":
+                        pitches.Add(NotePosition.BirdSkyTop);
                         break;
-                    case "BMT":
-                    case "BirdMidTop":
-                        pitches.Add(NotePosition.BirdMidTop);
+                    case "bsm":
+                    case "BirdSkyMid":
+                        pitches.Add(NotePosition.BirdSkyMid);
                         break;
-                    case "BMB":
-                    case "BirdMidBottom":
-                        pitches.Add(NotePosition.BirdMidBottom);
+                    case "bsb":
+                    case "BirdSkyBottom":
+                        pitches.Add(NotePosition.BirdSkyBottom);
                         break;
-                    case "FMT":
-                    case "FishMidTop":
-                        pitches.Add(NotePosition.FishMidTop);
+                    case "fst":
+                    case "FishSkyTop":
+                        pitches.Add(NotePosition.FishSkyTop);
                         break;
-                    case "FMB":
-                    case "FishMidBottom":
-                        pitches.Add(NotePosition.FishMidBottom);
+                    case "fsm":
+                    case "FishSkyMid":
+                        pitches.Add(NotePosition.FishSkyMid);
                         break;
-                    case "B":
-                    case "Bottom":
-                        pitches.Add(NotePosition.Bottom);
+                    case "fsb":
+                    case "FishSkyBottom":
+                        pitches.Add(NotePosition.FishSkyBottom);
+                        break;
+
+                    case "bct":
+                    case "BirdSeaTop":
+                        pitches.Add(NotePosition.BirdSeaTop);
+                        break;
+                    case "bcm":
+                    case "BirdSeaMid":
+                        pitches.Add(NotePosition.BirdSeaMid);
+                        break;
+                    case "bcb":
+                    case "BirdSeaBottom":
+                        pitches.Add(NotePosition.BirdSeaBottom);
+                        break;
+                    case "fct":
+                    case "FishSeaTop":
+                        pitches.Add(NotePosition.FishSeaTop);
+                        break;
+                    case "fcm":
+                    case "FishSeaMid":
+                        pitches.Add(NotePosition.FishSeaMid);
+                        break;
+                    case "fcb":
+                    case "FishSeaBottom":
+                        pitches.Add(NotePosition.FishSeaBottom);
                         break;
                 }
             }
@@ -152,11 +198,17 @@ public class NoteSpawner : MonoBehaviour
 
 enum NotePosition
 {
-    Top,
-    BirdMidTop,
-    BirdMidBottom,
-    FishMidTop,
-    FishMidBottom,
-    Bottom,
-    None
+    BirdSkyTop,
+    BirdSkyMid,
+    BirdSkyBottom,
+    BirdSeaTop,
+    BirdSeaMid,
+    BirdSeaBottom,
+    FishSkyTop,
+    FishSkyMid,
+    FishSkyBottom,
+    FishSeaTop,
+    FishSeaMid,
+    FishSeaBottom,
+    Rest
 }
