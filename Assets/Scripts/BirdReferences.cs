@@ -12,6 +12,7 @@ public class BirdReferences : MonoBehaviour
     public float deceleration;
     public float water_deceleration;
     public bool can_combo;
+    public bool is_damaged;
     [HideInInspector] public string currentAnimation;
 
     private KeyCode rhythmKey;
@@ -33,6 +34,7 @@ public class BirdReferences : MonoBehaviour
 
         rhythmKey = KeyCode.D;
         noteTag = "BirdNote";
+        this.is_damaged = false;
     }
 
     // Update is called once per frame

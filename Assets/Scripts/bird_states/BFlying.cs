@@ -19,6 +19,10 @@ public class BFlying : IState
     }
 
     public void Tick() {
+        if (bR.transform.position.x < -5)
+        {
+            bR.transform.position += new Vector3(2 * Time.deltaTime, 0f, 0f);
+        }
         if (Input.GetKey(KeyCode.W))
         {
             if (bR.rb.velocity.y < 0) {
@@ -59,6 +63,13 @@ public class BFlying : IState
     public bool To_Swimming() {
         if (bR.transform.position.y < 0)
         {
+            return true;
+        }
+        return false;
+    }
+
+    public bool To_Damaged() {
+        if (bR.is_damaged) {
             return true;
         }
         return false;
