@@ -20,8 +20,8 @@ public class NoteObject : MonoBehaviour
     {        
         if (transform.position.x < clearLine)
         {
-            Destroy(gameObject);
             GameManager.instance.NoteMiss(this.gameObject.tag);
+            Destroy(gameObject);
         }
 
     }

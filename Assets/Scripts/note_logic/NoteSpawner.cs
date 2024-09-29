@@ -12,8 +12,8 @@ public class NoteSpawner : MonoBehaviour
 
     public GameObject birdNotePrefab;
     public GameObject fishNotePrefab;
-    public GameObject skyObstaclePrefab;
-    public GameObject seaObstaclePrefab;
+    public GameObject waterObstaclePrefab;
+    public GameObject airObstaclePrefab;
     public float spawnDistance;
 
     public float skyTop;
@@ -121,22 +121,22 @@ public class NoteSpawner : MonoBehaviour
                     break;
 
                 case NotePosition.ObstacleSkyTop:
-                    Instantiate(skyObstaclePrefab, new Vector3(spawnDistance, skyTop, 0f), Quaternion.identity, noteHolder);
+                    Instantiate(airObstaclePrefab, new Vector3(spawnDistance, skyTop, 0f), Quaternion.identity, noteHolder);
                     break;
                 case NotePosition.ObstacleSkyMid:
-                    Instantiate(skyObstaclePrefab, new Vector3(spawnDistance, skyMid, 0f), Quaternion.identity, noteHolder);
+                    Instantiate(airObstaclePrefab, new Vector3(spawnDistance, skyMid, 0f), Quaternion.identity, noteHolder);
                     break;
                 case NotePosition.ObstacleSkyBottom:
-                    Instantiate(skyObstaclePrefab, new Vector3(spawnDistance, skyBottom, 0f), Quaternion.identity, noteHolder);
+                    Instantiate(airObstaclePrefab, new Vector3(spawnDistance, skyBottom, 0f), Quaternion.identity, noteHolder);
                     break;
                 case NotePosition.ObstacleSeaTop:
-                    Instantiate(seaObstaclePrefab, new Vector3(spawnDistance, seaTop, 0f), Quaternion.identity, noteHolder);
+                    Instantiate(waterObstaclePrefab, new Vector3(spawnDistance, seaTop, 0f), Quaternion.identity, noteHolder);
                     break;
                 case NotePosition.ObstacleSeaMid:
-                    Instantiate(seaObstaclePrefab, new Vector3(spawnDistance, seaMid, 0f), Quaternion.identity, noteHolder);
+                    Instantiate(waterObstaclePrefab, new Vector3(spawnDistance, seaMid, 0f), Quaternion.identity, noteHolder);
                     break;
                 case NotePosition.ObstacleSeaBottom:
-                    Instantiate(seaObstaclePrefab, new Vector3(spawnDistance, seaBottom, 0f), Quaternion.identity, noteHolder);
+                    Instantiate(waterObstaclePrefab, new Vector3(spawnDistance, seaBottom, 0f), Quaternion.identity, noteHolder);
                     break;
             }
         }
