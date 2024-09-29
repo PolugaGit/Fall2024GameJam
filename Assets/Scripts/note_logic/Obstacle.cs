@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class comboHitbox : MonoBehaviour
+public class Obstacle : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -13,19 +13,21 @@ public class comboHitbox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position -= new Vector3(10 * Time.deltaTime, 0f, 0f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject other = collision.gameObject;
-        if (other.name == "fish") {
+        if (other.name == "fish")
+        {
             FishReferences R = other.GetComponent<FishReferences>();
-            R.can_combo = true;
+            R.is_damaged = true;
         }
-        else if (other.name == "bird") {
+        else if (other.name == "bird")
+        {
             BirdReferences R = other.GetComponent<BirdReferences>();
-            R.can_combo = true;
+            R.is_damaged = true;
         }
     }
 
@@ -35,12 +37,12 @@ public class comboHitbox : MonoBehaviour
         if (other.name == "fish")
         {
             FishReferences R = other.GetComponent<FishReferences>();
-            R.can_combo = false;
+            R.is_damaged = false;
         }
         else if (other.name == "bird")
         {
             BirdReferences R = other.GetComponent<BirdReferences>();
-            R.can_combo = false;
+            R.is_damaged = false;
         }
     }
 }
