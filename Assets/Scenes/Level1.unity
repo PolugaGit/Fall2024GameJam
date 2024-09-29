@@ -703,9 +703,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
-
 --- !u!1 &452999422
-
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -713,55 +711,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-
-  - component: {fileID: 452999424}
   - component: {fileID: 452999423}
   m_Layer: 0
-  m_Name: GameManager
-
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
-
---- !u!114 &452999423
-
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-
-  m_GameObject: {fileID: 452999422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44aa6d8c7fea68e4ab080bdcdf747bee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  music: {fileID: 0}
-  hasStarted: 0
-  theBS: {fileID: 1537732753}
-  theNS: {fileID: 1825205054}
-  currentMultiplier: 0
-  multiplierTracker: 0
-  multiplierThresholds: 
-  currentScore: 0
-  scorePerNote: 100
-  scoreText: {fileID: 0}
---- !u!4 &452999424
-
+  m_IsActive: 0
+--- !u!4 &452999423
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-
   m_GameObject: {fileID: 452999422}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.653017, y: -2.2472568, z: -0.01817865}
-
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1141,7 +1108,6 @@ GameObject:
   m_Component:
   - component: {fileID: 707556217}
   - component: {fileID: 707556218}
-  - component: {fileID: 707556219}
   m_Layer: 7
   m_Name: comboHitBox
   m_TagString: Untagged
@@ -1567,7 +1533,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1510004620}
   - component: {fileID: 1510004621}
-  - component: {fileID: 1510004622}
   m_Layer: 7
   m_Name: comboHitBox
   m_TagString: Untagged
@@ -1847,7 +1812,60 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-
+--- !u!1 &1797605785
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1797605787}
+  - component: {fileID: 1797605786}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1797605786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797605785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44aa6d8c7fea68e4ab080bdcdf747bee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  music: {fileID: 0}
+  hasStarted: 0
+  theBS: {fileID: 1537732753}
+  theNS: {fileID: 1825205054}
+  currentMultiplier: 0
+  multiplierTracker: 0
+  multiplierThresholds: 
+  currentScore: 0
+  scorePerNote: 100
+  scoreText: {fileID: 0}
+--- !u!4 &1797605787
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797605785}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.653017, y: -2.2472568, z: -0.01817865}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1825205053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1902,11 +1920,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 452999423}
   - {fileID: 519420032}
   - {fileID: 215502572}
   - {fileID: 415393290}
@@ -1914,8 +1932,6 @@ SceneRoots:
   - {fileID: 220373082}
   - {fileID: 1620767127}
   - {fileID: 191466917}
-
-  - {fileID: 452999424}
   - {fileID: 1825205055}
   - {fileID: 1537732754}
-
+  - {fileID: 1797605787}
