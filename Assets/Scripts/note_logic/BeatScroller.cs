@@ -6,12 +6,12 @@ public class BeatScroller : MonoBehaviour
 {
     public float tempo;
     public bool hasStarted;
-    public float beatsPerFrame;
+    public float beatsPerSecond;
 
     // Start is called before the first frame update
     void Start()
     {
-        beatsPerFrame = tempo / 60f; // TODO: Have dependecy injected by song. Constant for scaling
+        beatsPerSecond = tempo / 60f; // TODO: Have dependecy injected by song or level/game manager?. Constant for scaling
     }
 
     // Update is called once per frame
@@ -19,15 +19,7 @@ public class BeatScroller : MonoBehaviour
     {
         if (hasStarted)
         {
-            transform.position -= new Vector3(beatsPerFrame * Time.deltaTime, 0f, 0f);
-        }
-        else
-        {
-            // TODO: Replace with menu button implement. For testing only
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                hasStarted = true;
-            }
+            transform.position -= new Vector3(beatsPerSecond * Time.deltaTime, 0f, 0f);
         }
     }
 }
