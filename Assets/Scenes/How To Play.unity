@@ -887,7 +887,7 @@ GameObject:
   - component: {fileID: 690553154}
   - component: {fileID: 690553153}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Start Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -925,7 +925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15db52c9d4d51254297309c763176843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelName: Level1
+  LevelName: Level 1 Copy
 --- !u!114 &690553154
 MonoBehaviour:
   m_ObjectHideFlags: 0
