@@ -157,7 +157,7 @@ public class NoteSpawner : MonoBehaviour
                     pitches.Add(NotePosition.Rest);
                     break;
                 }
-                if (note.Contains("O"))
+                if (note.Contains("o"))
                 {
                     pitches.Add(ObstaclePosition(note));
                     break;
