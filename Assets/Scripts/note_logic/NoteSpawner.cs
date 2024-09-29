@@ -159,8 +159,8 @@ public class NoteSpawner : MonoBehaviour
                 }
                 if (note.Contains("o"))
                 {
+                    Debug.Log("obstacle detect");
                     pitches.Add(ObstaclePosition(note));
-                    break;
                 }
                 // Unsafe. Not checking for None + NotePosition so assume not an issue
                 switch (note)

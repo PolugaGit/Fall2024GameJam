@@ -106,7 +106,7 @@ public class GameManager : MonoBehaviour
         if (player.Equals("Bird"))
         {
             birdMultiplier = 1; // May change to drop instead of 1x
-            fishMultTracker = 0;
+            birdMultTracker = 0;
             birdMultText.text = getMultText(birdMultiplier);
         }
 
