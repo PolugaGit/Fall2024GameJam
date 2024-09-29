@@ -22,6 +22,10 @@ public class FSwimming : IState
 
     public void Tick()
     {
+        if (fR.transform.position.x < -5)
+        {
+            fR.transform.position += new Vector3(2 * Time.deltaTime, 0f, 0f);
+        }
         if (Input.GetKey(KeyCode.UpArrow))
         {
             if (fR.rb.velocity.y < 0)
@@ -64,6 +68,15 @@ public class FSwimming : IState
 
     public bool To_Flying() {
         if (fR.transform.position.y > 0)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public bool To_Damaged()
+    {
+        if (fR.is_damaged)
         {
             return true;
         }
