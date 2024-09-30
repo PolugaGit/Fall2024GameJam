@@ -12,6 +12,8 @@ public class DelayedAudioPlayer : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         StartCoroutine(PlayAudioAfterDelay());
+
+     
     }
 
     IEnumerator PlayAudioAfterDelay()
@@ -20,4 +22,8 @@ public class DelayedAudioPlayer : MonoBehaviour
 
         audioSource.Play();
     }
+    
+    
+        
+
 }
