@@ -6,6 +6,7 @@ public class SceneChanger : MonoBehaviour
 {
     public float delay = 5f;
 
+
     public string nextSceneName;
 
     void Start()
@@ -16,6 +17,7 @@ public class SceneChanger : MonoBehaviour
     IEnumerator ChangeSceneAfterDelay()
     {
         yield return new WaitForSeconds(delay);
+        UnityEngine.Debug.Log("Delay Happened");
         GameManager.instance.saveScore(gameObject.scene.name);
         SceneManager.LoadScene(nextSceneName);
     }
