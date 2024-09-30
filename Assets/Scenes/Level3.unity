@@ -1250,7 +1250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 115
-  nextSceneName: 
+  nextSceneName: Final Screen
 --- !u!1 &1481661294
 GameObject:
   m_ObjectHideFlags: 0
