@@ -1222,7 +1222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe0f433eb2804be1a126075c94e81e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 10
+  delay: 55
   nextSceneName: Level2
 --- !u!1 &1481661294
 GameObject:
@@ -2300,3 +2300,4 @@ SceneRoots:
   - {fileID: 671676450}
   - {fileID: 1325069803}
   - {fileID: 1664927879}
+  - {fileID: 706544614}
