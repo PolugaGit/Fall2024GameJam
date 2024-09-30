@@ -908,6 +908,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2802426272613854576, guid: 871c98f0430eb6144aedd35a8272792e, type: 3}
+      propertyPath: PauseAudio
+      value: 
+      objectReference: {fileID: 1664927878}
     - target: {fileID: 7412010607944441543, guid: 871c98f0430eb6144aedd35a8272792e, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -2258,7 +2262,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.39569607, y: 0.39569607, z: 0.39569607}
+  m_LocalScale: {x: 0.39569607, y: 0.43130875, z: 0.39569607}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

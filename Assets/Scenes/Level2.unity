@@ -1457,7 +1457,7 @@ MonoBehaviour:
   tempo: 168
   hasStarted: 0
   beatsPerSecond: 0
-  noteSpeed: 2
+  noteSpeed: 1
 --- !u!4 &1537732754
 Transform:
   m_ObjectHideFlags: 0
@@ -1996,14 +1996,14 @@ MonoBehaviour:
   multiplierThresholds: 020000000400000008000000
   birdScore: 0
   fishScore: 0
-  birdMultiplier: 1
-  fishMultiplier: 1
+  birdMultiplier: 0
+  fishMultiplier: 0
   birdMultTracker: 0
   fishMultTracker: 0
-  birdScoreText: {fileID: 296684680}
-  fishScoreText: {fileID: 1756016870}
-  birdMultText: {fileID: 1653843887}
-  fishMultText: {fileID: 901051019}
+  birdScoreText: {fileID: 0}
+  fishScoreText: {fileID: 0}
+  birdMultText: {fileID: 0}
+  fishMultText: {fileID: 0}
 --- !u!4 &1797605787
 Transform:
   m_ObjectHideFlags: 0
@@ -2052,8 +2052,8 @@ MonoBehaviour:
   hasStarted: 0
   birdNotePrefab: {fileID: 3881012152247914363, guid: 0eeebeae1d715884fa22c3da200c671d, type: 3}
   fishNotePrefab: {fileID: 1827115759568662616, guid: 5f71efdf9ac74ac4bac1e6b51d5d8163, type: 3}
-  waterObstaclePrefab: {fileID: 2840895302374085708, guid: 5928764259f874d48b11b03205e9d1dd, type: 3}
-  airObstaclePrefab: {fileID: 2697786599292370778, guid: 292c9962195c440e39b205ef126d656c, type: 3}
+  waterObstaclePrefab: {fileID: 0}
+  airObstaclePrefab: {fileID: 0}
   spawnDistance: 10
   skyTop: 4.5
   skyMid: 3
@@ -2141,7 +2141,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 30, y: 45.01099}
+  m_Size: {x: 45.01099, y: 30}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2157,7 +2157,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.39569607, y: 0.39569607, z: 0.39569607}
+  m_LocalScale: {x: 0.43130875, y: 0.39569607, z: 0.39569607}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
