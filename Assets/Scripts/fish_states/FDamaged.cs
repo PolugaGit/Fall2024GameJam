@@ -13,6 +13,7 @@ public class FDamaged : IState
 
     public void OnEnter()
     {
+        timer = 0;
         fR.rb.velocity = new Vector2(-8, 0);
         if (fR.transform.position.y < 0)
         {
