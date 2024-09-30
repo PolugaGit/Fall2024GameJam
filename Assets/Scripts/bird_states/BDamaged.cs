@@ -12,6 +12,7 @@ public class BDamaged : IState
 
     public void OnEnter()
     {
+        timer = 0;
         bR.rb.velocity = new Vector2(-8, 0);
         if (bR.transform.position.y < 0)
         {
