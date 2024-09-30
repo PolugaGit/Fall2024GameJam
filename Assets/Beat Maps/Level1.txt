@@ -35,7 +35,7 @@ R,fcm
 R,
 bsm,fcb
 R,
-R,
+o2,o6,
 R,
 bsm,fcb
 R,
@@ -51,12 +51,12 @@ R,fcm
 R,
 bsm,fcb
 R,
-R,
+o2,o6,
 R,
 bsm,fcb
 R,
 R,fcm
-R,
+o1,
 bst,fcb
 R,
 R,
@@ -70,6 +70,6 @@ R,
 R,fsm
 R,
 bsm,fcb
-R,
+o5,
 bct,fcm
 R,
