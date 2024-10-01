@@ -13,7 +13,7 @@ public class BWaterCombo : IState
 
     public void OnEnter()
     {
-        bR.rb.velocity = new Vector2(0, -7);
+        bR.rb.velocity = new Vector2(0, -10);
         UnityEngine.Debug.Log("Entered Bird Combo");
     }
 
