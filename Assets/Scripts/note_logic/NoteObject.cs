@@ -12,7 +12,7 @@ public class NoteObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -20,8 +20,8 @@ public class NoteObject : MonoBehaviour
     {        
         if (transform.position.x < clearLine)
         {
+            GameManager.instance.NoteMiss(this.gameObject.tag);
             Destroy(gameObject);
-            Debug.Log("Miss!");
         }
 
     }

@@ -7,6 +7,14 @@ public class PauseGame : MonoBehaviour
 {
     
     public static bool GameIsPaused = false;
+    public GameObject PauseAudio;
+    public AudioSource audioSource;  
+
+    public void Start()
+    {
+        audioSource = PauseAudio.GetComponent<AudioSource>();
+        
+    }
 
     public GameObject pauseMenuUI;
     // Update is called once per frame
@@ -30,6 +38,7 @@ public class PauseGame : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        audioSource.Play();
     }
 
     void Pause()
@@ -37,19 +46,19 @@ public class PauseGame : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        audioSource.Pause();
     }
 
     public void LoadMenu()
     {
+
+        Debug.Log("Quitting to Menu");
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
-    }
-
-    public void QuitGame()
-    {
-        Debug.Log("Quitting Game");
         
     }
+
+    
 
 
 }

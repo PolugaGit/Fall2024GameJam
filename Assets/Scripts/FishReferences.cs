@@ -18,6 +18,7 @@ public class FishReferences : MonoBehaviour
     private string noteTag;
     private bool touchingNote;
     private GameObject note;
+    public bool is_damaged;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,7 @@ public class FishReferences : MonoBehaviour
         this.deceleration = 20;
         this.air_deceleration = 10;
         this.can_combo = false;
+        this.is_damaged = false;
 
         rhythmKey = KeyCode.RightArrow;
         noteTag = "FishNote";
@@ -43,13 +45,13 @@ public class FishReferences : MonoBehaviour
             if (touchingNote)
             {
                 Destroy(note);
-                Debug.Log("Hit!");
+                GameManager.instance.NoteHit(this.gameObject.tag);
             }
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag(noteTag)) // TODO: Implement tag & bool. Implement fish
+        if (other.CompareTag(noteTag))
         {
             touchingNote = true;
             note = other.gameObject;

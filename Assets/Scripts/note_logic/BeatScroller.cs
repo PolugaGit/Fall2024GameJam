@@ -7,6 +7,7 @@ public class BeatScroller : MonoBehaviour
     public float tempo;
     public bool hasStarted;
     public float beatsPerSecond;
+    public float noteSpeed = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,7 @@ public class BeatScroller : MonoBehaviour
     {
         if (hasStarted)
         {
-            transform.position -= new Vector3(beatsPerSecond * Time.deltaTime, 0f, 0f);
+            transform.position -= new Vector3(noteSpeed * beatsPerSecond * Time.deltaTime, 0f, 0f);
         }
     }
 }
